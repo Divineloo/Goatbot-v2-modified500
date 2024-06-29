@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "gfx3",
+		name: "gfx5",
 		aliases: [],
 		version: "1.0",
 		author: "AceGun",
@@ -19,7 +19,7 @@ module.exports = {
 		const pathImg = __dirname + `/cache/${event.threadID}_${event.senderID}.png`;
 		const text = args.join(" ");
 		if (!text) return api.sendMessage(`Wrong format\nUse:/gfx text`, event.threadID, event.messageID);
-		const getWanted = await axios.get(`https://tanjiro-api.onrender.com/gfx6?name=${text}&api_key=tanjiro`, { responseType: "arraybuffer" }).then(res => res.data).catch(() => null);
+		const getWanted = await axios.get(`https://tanjiro-api.onrender.com/gfx2?name=${text}&api_key=tanjiro`, { responseType: "arraybuffer" }).then(res => res.data).catch(() => null);
 		if (!getWanted) return api.sendMessage(`An error occurred, please try again later!`, event.threadID, event.messageID);
 		fs.writeFileSync(pathImg, Buffer.from(getWanted, "utf-8"));
 		return api.sendMessage({ attachment: fs.createReadStream(pathImg) }, event.threadID, () => fs.unlinkSync(pathImg), event.messageID);
