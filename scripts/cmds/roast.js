@@ -25,8 +25,8 @@ module.exports = {
 
       const mentionName = event.mentions[mention[0]].replace("@", ""); 
 
-      if (mentionName.toLowerCase().includes("Xenon d sky","Sky","yuuto san","Xenon","S K Y 🪽","Xenon","Xenon d","Xenon D Sky",)) {//replace madafaka with your name
-        api.sendMessage("Oi Gay You can't insult my owner🤬 ", event.threadID);
+      if (mentionName.toLowerCase().includes("kshitiz")) {//replace kshitiz with your name
+        api.sendMessage("Ayo Gay You can't insult my owner🤬 ", event.threadID);
         return;
       }
 

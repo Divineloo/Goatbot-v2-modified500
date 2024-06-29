@@ -1,19 +1,19 @@
 module.exports = {
-  config: {
-    name: "pussy",
-    aliases: ["18+"],
-    version: "1.0",
-    author: "Doru fix by kivv",
-    countDown: 5,
-    role: 2,
-    shortDescription: "send you pic of pussy",
-    longDescription: "sends u pic of girls pussy",
-    category: "18+",
-    guide: "{pn}"
-  },
+	config: {
+		name: "pussy",
+		aliases: ["18+"],
+		version: "1.0",
+		author: "Doru fix by kivv",
+		countDown: 5,
+		role: 2,
+		shortDescription: "send you pic of pussy",
+		longDescription: "sends u pic of girls pussy",
+		category: "18+",
+		guide: "{pn}"
+	},
 
-  onStart: async function ({ message }) {
-   var link = [ 
+	onStart: async function ({ message }) {
+	 var link = [ 
 "https://i.ibb.co/jfqMF07/image.jpg",
 "https://i.ibb.co/tBBCS4y/image.jpg",
 "https://i.ibb.co/3zpyMVY/image.jpg",
