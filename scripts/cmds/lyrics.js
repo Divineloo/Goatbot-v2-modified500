@@ -4,7 +4,7 @@ module.exports = {
  config: {
  name: "lyrics",
  version: "1.0",
- author: "modified by yukinori",
+ author: "rulex-al/loufi",
  countDown: 5,
  role: 0,
  shortDescription: {
