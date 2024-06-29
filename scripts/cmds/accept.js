@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['acp'],
     version: "1.0",
     author: "Loid Butter",
-    countDown: 8,
+    countDown: 60,
     role: 2,
     shortDescription: "accept users",
     longDescription: "accept users",
