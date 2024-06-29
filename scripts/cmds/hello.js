@@ -1,21 +1,39 @@
 module.exports = {
-  config: {
-      name: "hello",
-     aliases: [],
-      version: "1.0",
-      author: "yukinori",
-      countDown: 5,
-      role: 0,
-      shortDescription: "sarcasm",
-      longDescription: "sarcasm",
-      category: "reply",
-  },
-onStart: async function(){}, 
-onChat: async function({
-  event,
-  message,
-  getLang
-}) {
-  if (event.body && event.body.toLowerCase() == "hello") return message.reply("Hello! I'm here to help you with anything you need. Feel free to ask me any questions or share anything you'd like to discuss. I'm here to make your experience as pleasant as possible!");
-}
+ config: {
+ name: "hello", 
+ version: "1.0", 
+ author: "Ayoub ßťøçïo", 
+ countDown: 5, 
+ role: 2, 
+ shortDescription: {
+ vi: "đây là mô tả ngắn của lệnh",
+ en: "this is short description of command"
+ }, 
+ longDescription: {
+ vi: "đây là mô tả dài của lệnh",
+ en: "this is long description of command"
+ },
+ category: "categoryName",
+ guide: {
+ vi: "đây là hướng dẫn sử dụng của lệnh",
+ en: "this is guide of command"
+ } 
+ },
+
+ langs: {
+ vi: {
+ hello: "xin chào",
+ helloWithName: "xin chào, id facebook của bạn là %1"
+ }, // Vietnamese language
+ en: {
+ hello: "hello world",
+ helloWithName: "hello, your facebook id is %1"
+ } // English language
+ },
+
+ 
+ onStart: async function ({ api, args, message, event, threadsData, usersData, dashBoardData, globalData, threadModel, userModel, dashBoardModel, globalModel, role, commandName, getLang }) {
+ message.reply("hello my friend ✨🙂💔")
+
+ }
 };

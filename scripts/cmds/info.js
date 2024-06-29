@@ -4,30 +4,40 @@ const moment = require('moment-timezone');
 module.exports = {
   config: {
     name: "info",
-    version: "1.0",
-    author: "Mr perfect",
-    countDown: 0,
+    version: "1.3",
+    author: "AceGun",
+    countDown: 5,
     role: 0,
-    shortDescription: { vi: "", en: "" },
-    longDescription: { vi: "", en: "" },
-    category: "owner",
-    guide: { en: "" },
+    shortDescription: {
+      vi: "",
+      en: "Sends information about the bot and admin along with an image."
+    },
+    longDescription: {
+      vi: "",
+      en: "Sends information about the bot and admin along with an image."
+    },
+    category: "utility",
+    guide: {
+      en: "{pn}"
+    },
     envConfig: {}
   },
+
   onStart: async function ({ message }) {
-    const botName = "Mr perfect";
-    const botPrefix = "+";
-    const authorName = "Mr perfect";
-    const ownAge = "18";
-    const teamName = "Github team";
-    const authorFB = "https://www.facebook.com/m.zenesha";
-    const authorInsta = "https://www.instagram.com/devildeacon?igsh=Z2R2dXZkYWNjanQw";
-    const tikTok = "https://www.tiktok.com/@rx______editz06?_t=8kK7a7zlktG&_r=1";
-    const urls = JSON.parse(fs.readFileSync('perfect.json'));
+    const botName = "Loid Bot";
+    const botPrefix = "$";
+    const authorName = "Loid Butter";
+    const authorFB = "https://www.facebook.com/profile.php?id=100082741664058";
+    const authorInsta = "";
+    const status = "hi, crush ko po kayong lahat";
+
+    const urls = JSON.parse(fs.readFileSync('loid.json'));
     const link = urls[Math.floor(Math.random() * urls.length)];
-    const now = moment().tz('Asia/Kathmandu');
+
+    const now = moment().tz('Asia/Manila');
     const date = now.format('MMMM Do YYYY');
     const time = now.format('h:mm:ss A');
+
     const uptime = process.uptime();
     const seconds = Math.floor(uptime % 60);
     const minutes = Math.floor((uptime / 60) % 60);
@@ -36,23 +46,12 @@ module.exports = {
     const uptimeString = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
 
     message.reply({
-      body: `《  Bot & Owner Info 》
-\Name: ${botName}
-\Bot Prefix: ${botPrefix}
-\owner: ${authorName}
-\age : ${ownAge}
-\Facebook: ${authorFB}
-\Instagram: ${authorInsta}
-\TikTok: ${tikTok}
-\Datee: ${date}
-\Time: ${time}
-\Team: ${teamName}
-\Uptime: ${uptimeString}
-\===============`,
+      body: `===「 Bot & Owner Info 」===\n❏Bot Name: ${botName}\n❏Bot Prefix: ${botPrefix}\n❏Name: ${authorName}\n❏Facebook: ${authorFB}\n❏Instagram: ${authorInsta}\n❏Status: ${status}\n❏Date: ${date}\n❏Time: ${time}\n❏Uptime: ${uptimeString}\n=====================`,
       attachment: await global.utils.getStreamFromURL(link)
     });
   },
-  onChat: async function ({ event, message, getLang }) {
+
+  onChat: async function({ event, message, getLang }) {
     if (event.body && event.body.toLowerCase() === "info") {
       this.onStart({ message });
     }
